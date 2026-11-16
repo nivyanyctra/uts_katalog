@@ -73,7 +73,7 @@ class _CupHeaderState extends State<CupHeader>
                 ),
                 SizedBox(height: 2),
                 Text(
-                  'Tekan lama kartu untuk ubah ketersediaan',
+                  'Tekan lama kartu untuk ubah ketersediaan menu',
                   style: TextStyle(fontSize: 13, color: AppColors.muted),
                 ),
               ],
