@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Katalog Menu',
+      title: 'Katalog Menu (dev)',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
