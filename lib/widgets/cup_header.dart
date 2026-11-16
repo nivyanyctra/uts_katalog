@@ -39,14 +39,14 @@ class _CupHeaderState extends State<CupHeader>
           Container(
             width: 48,
             height: 48,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: AppColors.tint,
             ),
             child: RepaintBoundary(
               child: AnimatedBuilder(
                 animation: _controller,
-                child: const Icon(
+                child: Icon(
                   Icons.local_cafe,
                   size: 24,
                   color: AppColors.accent,
@@ -59,7 +59,7 @@ class _CupHeaderState extends State<CupHeader>
             ),
           ),
           const SizedBox(width: 16),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -71,7 +71,7 @@ class _CupHeaderState extends State<CupHeader>
                     color: AppColors.ink,
                   ),
                 ),
-                SizedBox(height: 2),
+                const SizedBox(height: 2),
                 Text(
                   'Tekan lama kartu untuk ubah ketersediaan',
                   style: TextStyle(fontSize: 13, color: AppColors.muted),

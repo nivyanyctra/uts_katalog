@@ -7,8 +7,8 @@ class MenuModel {
     required this.harga,
     required this.ikon,
     required this.deskripsi,
-    bool tersedia = true,
-  }) : tersedia = ValueNotifier<bool>(tersedia);
+    this.tersedia = true,
+  });
 
   final int id;
   final String nama;
@@ -16,10 +16,7 @@ class MenuModel {
   final IconData ikon;
   final String deskripsi;
 
-  final ValueNotifier<bool> tersedia;
-
-  void toggle() => tersedia.value = !tersedia.value;
-  void dispose() => tersedia.dispose();
+  bool tersedia;
 }
 
 List<MenuModel> buatDaftarMenu() => [

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-abstract final class AppColors {
-  static const background = Color(0xFFFAF8F5);
-  static const ink = Color(0xFF2B2420);
-  static const muted = Color(0xFF8A8079);
-  static const tint = Color(0xFFEFE7DF);
-  static const line = Color(0xFFE9E2D9);
-  static const accent = Color(0xFF3E2F26);
+class AppColors {
+  static final background = Color(0xFFFAF8F5);
+  static final ink = Color(0xFF2B2420);
+  static final muted = Color(0xFF8A8079);
+  static final tint = Color(0xFFEFE7DF);
+  static final line = Color(0xFFE9E2D9);
+  static final accent = Color(0xFF3E2F26);
 }
 
 String formatRupiah(int nilai) {

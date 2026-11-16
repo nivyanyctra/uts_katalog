@@ -5,7 +5,7 @@ import '../models/menu_model.dart';
 import '../widgets/radial_hero.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key, required this.menu});
+  DetailPage({super.key, required this.menu});
 
   final MenuModel menu;
 
@@ -21,7 +21,7 @@ class DetailPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
+            padding: EdgeInsets.symmetric(horizontal: 32),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -29,7 +29,7 @@ class DetailPage extends StatelessWidget {
                   id: menu.id,
                   ikon: menu.ikon,
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(32)),
+                    borderRadius: BorderRadius.circular(32),
                     child: Container(
                       width: 180,
                       height: 180,
@@ -38,31 +38,41 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 32),
+                SizedBox(height: 32),
                 Text(
                   menu.nama,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.w700,
                     color: AppColors.ink,
                   ),
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
                 Text(
                   formatRupiah(menu.harga),
-                  style: const TextStyle(fontSize: 18, color: AppColors.muted),
+                  style: TextStyle(fontSize: 18, color: AppColors.muted),
                 ),
-                const SizedBox(height: 16),
-                ValueListenableBuilder<bool>(
-                  valueListenable: menu.tersedia,
-                  builder: (context, tersedia, _) =>
-                      _StatusChip(tersedia: tersedia),
+                SizedBox(height: 16),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: menu.tersedia ? AppColors.tint : AppColors.ink,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    menu.tersedia ? 'Tersedia' : 'Habis',
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      color: menu.tersedia ? AppColors.accent : Colors.white,
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 24),
+                SizedBox(height: 24),
                 Text(
                   menu.deskripsi,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 15,
                     height: 1.5,
                     color: AppColors.muted,
@@ -71,31 +81,6 @@ class DetailPage extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class _StatusChip extends StatelessWidget {
-  const _StatusChip({required this.tersedia});
-
-  final bool tersedia;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-      decoration: BoxDecoration(
-        color: tersedia ? AppColors.tint : AppColors.ink,
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
-      ),
-      child: Text(
-        tersedia ? 'Tersedia' : 'Habis',
-        style: TextStyle(
-          fontSize: 13,
-          fontWeight: FontWeight.w600,
-          color: tersedia ? AppColors.accent : Colors.white,
         ),
       ),
     );

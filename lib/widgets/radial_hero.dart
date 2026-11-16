@@ -10,7 +10,7 @@ RectTween _lintasanMelengkung(Rect? begin, Rect? end) =>
     MaterialRectCenterArcTween(begin: begin, end: end);
 
 class RadialHero extends StatelessWidget {
-  const RadialHero({
+  RadialHero({
     super.key,
     required this.id,
     required this.ikon,
@@ -28,17 +28,17 @@ class RadialHero extends StatelessWidget {
       createRectTween: _lintasanMelengkung,
       flightShuttleBuilder: (context, animation, direction, from, to) =>
           _RadialShuttle(
-        animation: animation,
-        direction: direction,
-        ikon: ikon,
-      ),
+            animation: animation,
+            direction: direction,
+            ikon: ikon,
+          ),
       child: child,
     );
   }
 }
 
 class _RadialShuttle extends StatelessWidget {
-  const _RadialShuttle({
+  _RadialShuttle({
     required this.animation,
     required this.direction,
     required this.ikon,
@@ -47,8 +47,6 @@ class _RadialShuttle extends StatelessWidget {
   final Animation<double> animation;
   final HeroFlightDirection direction;
   final IconData ikon;
-
-  static const double _radiusPersegi = 32;
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +60,7 @@ class _RadialShuttle extends StatelessWidget {
         return LayoutBuilder(
           builder: (context, constraints) {
             final sisi = constraints.biggest.shortestSide;
-            final radius =
-                lerpDouble(sisi / 2, _radiusPersegi, t)!.clamp(0.0, sisi / 2);
+            final radius = lerpDouble(sisi / 2, 32, t)!.clamp(0.0, sisi / 2);
             return ClipRRect(
               borderRadius: BorderRadius.circular(radius),
               child: ColoredBox(
