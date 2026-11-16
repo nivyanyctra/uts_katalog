@@ -64,7 +64,7 @@ class _CupHeaderState extends State<CupHeader>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Katalog Menu',
+                  'Katalog Menu (dev)',
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
